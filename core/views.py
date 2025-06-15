@@ -10,7 +10,7 @@ import re
 @login_required(login_url='login')
 def index(request):
     movies = Movie.objects.all()
-    featured_movie = movies[len(movies)-1]
+    featured_movie = movies.last() if movies.exists() else None
 
     context = {
         'movies':movies,

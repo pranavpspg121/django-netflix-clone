@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -88,15 +89,18 @@ DATABASES = {
 
         'ENGINE': 'django.db.backends.postgresql',
 
-        'NAME': 'database_vjyx',
+        'NAME': 'netflix_1kyo',
 
-        'USER': 'database_vjyx_user',
+        'USER': 'netflix_1kyo_user',
 
-        'PASSWORD': '1GFJZvzoxt8Yv3VwcY4ZMPZsxGX7qArd',
+        'PASSWORD': 'hNFOfWGh1NadYKycejEfxBLDzH3cLcC7',
 
-        'HOST': 'dpg-d0as3ridbo4c73c5r9b0-a.oregon-postgres.render.com',
+        'HOST': 'dpg-d11b95re5dus738jg3cg-a.oregon-postgres.render.com',
 
         'PORT': '5432',
+        'OPTIONS': {
+            'sslmode': 'require'  # 🔒 THIS is the important part
+        }
 
     }
 }
